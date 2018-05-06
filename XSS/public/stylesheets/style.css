@@ -1,14 +1,14 @@
 body {
   margin: 0px;
-  padding: 0px;
-  width: 100%;
-  height: 100%;
 }
 
 .main {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  width: 100vw;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-areas: "menu content";
 }
 
 .title {
@@ -21,10 +21,10 @@ body {
 }
 
 .menu {
+  grid-area: "menu";
+
   background-color: #2196f3;
   color: white;
-  width: 10%;
-  height: 100%;
   font-size: 1.2em;
   font-weight: bold;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -44,12 +44,7 @@ body {
 }
 
 .content {
-  position: absolute;
-  top: 0px;
-  left: 10%;
-  width: 88%;
-  height: 96%;
-  padding: 1%;
+  grid-area: "content";
 }
 
 .exercise {
