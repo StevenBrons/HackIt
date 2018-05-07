@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HackIt.tk</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>HackIt.tk</h1>
+    <form method="post" action="/start">
+      <% for (challenge of challenges) { %>
+        <input id="challenge-<%= challenge.id %>" type="radio" name="challenge" value="<%= challenge.id %>">
+        <label for="challenge-<%= challenge.id %>"><%= challenge.title %></label>
+        <br>
+      <% } %>
+      <br>
+      <input type="submit" value="Start Challenge!">
+    </form>
+  </body>
+</html>
