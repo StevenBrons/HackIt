@@ -3,7 +3,7 @@
   --primary-light: #bbdefb;
   --primary: #2196f3;
   --text: #FFFFFF;
-  --accent: #009688;
+  --accent: #4CAF50;
   --primary-text: #212121;
   --secondary-text: #757575;
   --divider: #BDBDBD;
@@ -20,7 +20,6 @@ body {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 250px auto;
-  grid-template-areas: "menu content";
 }
 
 .title {
@@ -33,7 +32,6 @@ body {
 }
 
 .menu {
-  grid-area: "menu";
   background-color: var(--primary);
   color: var(--text);
   font-size: 1.2em;
@@ -56,11 +54,12 @@ body {
 
 .content {
   margin: 0px;
-  grid-area: "content";
+  display: grid;
+  grid-template-rows: 40% auto;
 }
 
 .exercise {
-  margin: 2%;
+  margin: 0px;
   font-size: 1.4em;
   font-family: var(--defauld-font);
   color: var(--primary-text);
@@ -85,7 +84,24 @@ h2 {
   font-family: var(--defauld-font);
 }
 
+.text {
+  margin: 2%; 
+}
+
+.task {
+  font-weight: bold;
+  font-family: var(--font);
+  margin: 2%;   
+  color: var(--accent);
+}
+
 textarea {
+  color: var(--secondary-text);
+  border: 2px solid var(--divider);
+  font-size: 1.4em;
+}
+
+input {
   color: var(--secondary-text);
   border: 2px solid var(--divider);
   font-size: 1.4em;
@@ -94,4 +110,8 @@ textarea {
 .comment {
   display: block;
   font-size: 1.4em;
+}
+
+iframe {
+  border: 0px solid black;
 }

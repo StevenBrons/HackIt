@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= challenge.title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <div class="main">
-      <div class="menu">
-          <div class="title">
-              HackIt.tk
-          </div>
-        <div class="menu-item">
-            Challenge 1
-        </div>
-        <div class="menu-item">
-            Challenge 2
-        </div>
-      </div>
 
-      <div class="content">
-        <h1>
-            <%= challenge.title %>
-        </h1>    
-        <div class="exercise">
-          <%= challenge.text %>
-        </div>
+<head>
+  <title>
+    <%= challenges[index].title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
 
-        <iframe style="width: 100%;" src="/form<%= challenge.index %>"></iframe>
+<body>
+  <div class="main">
+    <div class="menu">
+      <div class="title">
+        HackIt.tk
       </div>
+      <% for (var c of challenges) { %>
+        <div class="menu-item" href="/challenge/<%= c.index %>">
+          <%= c.title %>
+        </div>
+        <% } %>
     </div>
-  </body>
+
+    <div class="content">
+      <div class="exercise">
+        <h1>
+          <%= challenges[index].title %>
+        </h1>
+        <div class="text">
+          <%= challenges[index].text %>
+        </div>
+        <div class="task">
+          <%= challenges[index].task %>
+        </div>
+      </div>
+
+      <iframe src="/form/<%= index %>"></iframe>
+    </div>
+  </div>
+</body>
+
 </html>

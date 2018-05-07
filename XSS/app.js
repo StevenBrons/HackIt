@@ -19,8 +19,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', challenge.GET);
-app.get('/form1', form.form1);
+app.get('/', (req,res) => {
+  res.redirect("/challenge/0");
+});
+app.get('/challenge/:index/:key', challenge.complete);
+app.get('/challenge/:index', challenge.GET);
+app.get('/form/:index', form.GET);
+app.post('/form/:index', form.POST);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
