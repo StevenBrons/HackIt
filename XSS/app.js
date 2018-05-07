@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var timeBom = require('./lib/timeBom');
 var challenge = require('./routes/challenge');
 var form = require('./routes/form');
 
@@ -19,9 +20,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(timeBom(60 * 60 * 1000)); // 60 minutes
+
+// For debug purposes
+app.get('/stop', () => { process.exit(0); })
+
 app.get('/', (req,res) => {
   res.redirect("/challenge/0");
 });
+
 app.get('/challenge/:index/:key', challenge.complete);
 app.get('/challenge/:index', challenge.GET);
 app.get('/form/:index', form.GET);

@@ -61,8 +61,8 @@ class Sandbox extends EventEmitter {
       'run',
       '--network', this.names.network,
       '--name', this.names.challengeContainer,
-      'ubuntu',
-      'bash'
+      '-p', `${this.uniqId}:80`,
+      'challenge-xss',
     ]);
   }
 
