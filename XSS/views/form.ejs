@@ -20,10 +20,10 @@
         alert = function (asdf) {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.onreadystatechange = function () {
-                alert2("asdf!");
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     if (xmlHttp.responseText == "success") {
-                        alert2("Success!");
+                        alert2("You did it!");
+                        window.parent.postMessage("success", '*');            
                     }
                 }
             }

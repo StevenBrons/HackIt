@@ -1,12 +1,8 @@
 var challenges = require('../challenges');
 
-var list = ["A comment!"];
-
-var key = "";
-
 exports.GET = (req, res) => {
   res.render('form', {
-    "comments": list,
+    "comments": challenges[req.params.index].comments,
     "index": req.params.index,
     "key":challenges[req.params.index].key,
   });
@@ -15,11 +11,11 @@ exports.GET = (req, res) => {
 exports.POST = function(req, res) {
   var t = req.body.text;
   if (t != null) {
-    list.push(t);
+    challenges[req.params.index].comments.push(t);
   }
 
   res.render('form', {
-    "comments": list,
+    "comments": challenges[req.params.index].comments,
     "index": req.params.index,
     "key":challenges[req.params.index].key,
   });

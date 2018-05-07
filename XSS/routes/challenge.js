@@ -21,8 +21,19 @@ exports.complete = function (req, res) {
 };
 
 exports.GET = function (req, res) {
-	res.render('challenge', {
-		"index": req.params.index,
-		"challenges": challenges,
-	});
+	if (req.params.index >= 0 && req.params.index < challenges.length) {
+		res.render('challenge', {
+			"index": req.params.index,
+			"challenges": challenges,
+		});
+	}
+	if (req.params.index == challenges.length) {
+		for (let i = 0; i < challenges.length; i++) {
+			if (!challenges[i].complete) {
+				res.redirect("/challenge/" + i);
+				return;
+			}
+		}
+		res.redirect("/end/");
+	}
 };

@@ -19,7 +19,8 @@ let challenges = [
 ];
 
 for (let c of challenges) {
-    c.key = Math.random().toString(36).substring(7);   
+    c.key = Math.random().toString(36).substring(7);
+    c.comments = [];   
 }
 
 module.exports = challenges;

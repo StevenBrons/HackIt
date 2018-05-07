@@ -44,6 +44,9 @@ body {
   transition-duration: 50ms;
   padding: 5%;
   margin-top: 10px;
+  display: block;
+  text-decoration: none;
+  color: var(--text);
 }
 
 .menu-item:hover {
@@ -114,4 +117,12 @@ input {
 
 iframe {
   border: 0px solid black;
+}
+
+.checkmark {
+  fill: var(--text);
+  width: 25px;
+  margin-bottom: -10px;
+  display: inline;
+  float: right;
 }
