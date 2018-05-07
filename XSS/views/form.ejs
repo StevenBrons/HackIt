@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Unsafe Form 1</title>
+</head>
+<body style="text-align: center;">
+    <h2>Post your comment!</h2>
+    <form>
+        <textarea rows="4" cols="50" placeholder="Type your comment here!">
+        </textarea> 
+    </form>
+
+    <% for (var c of comments) { %>
+            <div class="comment"><%= c %></div>
+    <% } %>
+</body>
+</html>

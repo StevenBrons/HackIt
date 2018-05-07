@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var challenge = require('./routes/challenge');
+var form = require('./routes/form');
 
 var app = express();
 
@@ -18,7 +19,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', challenge.GET);
+app.get('/', challenge.GET);
+app.get('/form1', form.form1);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

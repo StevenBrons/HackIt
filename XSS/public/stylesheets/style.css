@@ -1,3 +1,16 @@
+:root {
+  --primary-dark: #1976d2;
+  --primary-light: #bbdefb;
+  --primary: #2196f3;
+  --text: #FFFFFF;
+  --accent: #009688;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --divider: #BDBDBD;
+  --defauld-font: Arial, Helvetica, sans-serif;
+  
+}
+
 body {
   margin: 0px;
 }
@@ -5,29 +18,27 @@ body {
 .main {
   width: 100vw;
   min-height: 100vh;
-
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: 250px auto;
   grid-template-areas: "menu content";
 }
 
 .title {
-  font-size: 2em;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 40px;
+  font-family: var(--defauld-font);
   font-weight: bolder;
-  background-color: #1976d2;
-  padding: 5%;
+  background-color: var(--primary-dark);
+  padding: 10px;
   cursor: default;
 }
 
 .menu {
   grid-area: "menu";
-
-  background-color: #2196f3;
-  color: white;
+  background-color: var(--primary);
+  color: var(--text);
   font-size: 1.2em;
   font-weight: bold;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: var(--defauld-font);
   position: relative;
 }
 
@@ -38,22 +49,49 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #1976d2;
+  background-color: var(--primary-dark);
   transition-duration: 50ms;
   cursor: pointer;
 }
 
 .content {
+  margin: 0px;
   grid-area: "content";
 }
 
 .exercise {
+  margin: 2%;
   font-size: 1.4em;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: var(--defauld-font);
+  color: var(--primary-text);
 }
 
 h1 {
-  margin: 0.5%;
-  font-size: 3em;
-  color: black;
+  margin: 0px;
+  padding: 10px;
+  padding-left: 2%;
+  font-size: 40px;
+  color: var(--primary-text);
+  background-color: var(--primary-light);
+  font-family: var(--defauld-font);
+}
+
+h2 {
+  margin: 0px;
+  padding: 10px;
+  padding-left: 2%;
+  font-size: 30px;
+  color: var(--primary-text);
+  font-family: var(--defauld-font);
+}
+
+textarea {
+  color: var(--secondary-text);
+  border: 2px solid var(--divider);
+  font-size: 1.4em;
+}
+
+.comment {
+  display: block;
+  font-size: 1.4em;
 }
