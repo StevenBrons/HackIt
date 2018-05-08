@@ -88,6 +88,7 @@ h2 {
 }
 
 .text {
+  width: 70%;
   margin: 2%; 
 }
 
@@ -102,16 +103,14 @@ textarea {
   color: var(--secondary-text);
   border: 2px solid var(--divider);
   font-size: 1.4em;
-}
-
-input {
   color: var(--secondary-text);
   border: 2px solid var(--divider);
   font-size: 1.4em;
 }
 
-.comment {
-  display: block;
+input {
+  color: var(--secondary-text);
+  border: 2px solid var(--divider);
   font-size: 1.4em;
 }
 
@@ -125,4 +124,38 @@ iframe {
   margin-bottom: -10px;
   display: inline;
   float: right;
+}
+
+.hint {
+  color: var(--secondary-text);
+  font-size: 60%;
+  font-style: italic;
+  position: absolute;
+  margin-right: 20px;
+  top: 22px;
+  right: 20px;
+  vertical-align: middle;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hint:hover {
+  color: var(--primary-text);
+}
+
+#hint {
+  float: right;
+  width: 20%;
+  padding: 10px;
+  margin-top: 80px;
+  font-weight: bolder;
+  color: var(--primary-dark);
+}
+
+.comment {
+  display: block;
+  font-size: 1.4em;
+  color: var(--secondary-text);
+  font-size: 1.4em;
 }

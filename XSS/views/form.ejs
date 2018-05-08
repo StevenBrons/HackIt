@@ -11,6 +11,7 @@
 
 <body style="text-align: center;">
     <script>
+        <%= script %>
         var key = "<%= key %>";
         setTimeout(() => {
             key = "";
@@ -22,7 +23,7 @@
             xmlHttp.onreadystatechange = function () {
                 if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                     if (xmlHttp.responseText == "success") {
-                        alert2("You did it!");
+                        alert2("Mission accomplished!\n" + asdf);
                         window.parent.postMessage("success", '*');            
                     }
                 }
@@ -39,10 +40,8 @@
     </form>
 
     <% for (var c of comments) { %>
-        <div class="comment">
-            <%- c %>
-        </div>
-        <% } %>
+        <div class="comment"><%- c %></div>
+    <% } %>
 </body>
 
 </html>

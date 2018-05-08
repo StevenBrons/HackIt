@@ -1,7 +1,7 @@
-const makeTimeout = () => setTimeout(() => process.exit(), 15000);
+const makeTimeout = (ms) => setTimeout(() => process.exit(), ms);
 
 const makeTimeBom = (ms) => {
-  let timeoutRef = makeTimeout();
+  let timeoutRef = makeTimeout(ms);
 
   return function timeBom (req, res, next) {
     clearTimeout(timeoutRef);
