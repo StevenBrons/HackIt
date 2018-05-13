@@ -36,16 +36,9 @@ let challenges = [
     {
         //directly get the key
         title: "Challenge 5",
-        text: "Let's see if you are capable of finishing this challenge. Break our challenge-system!",
+        text: "Let's see if you are capable of finishing this challenge. Your final challenge: break our challenge-system!",
         task: "<i>Find a way to popup an alert when this page is loaded</i>",
         hint: "How does this website detect if a challenge is completed?",
-    },
-    {
-        //directly get the key within time
-        title: "Challenge 6",
-        text: "See this as the final challenge. Are you still capable of breaking our win-detection?",
-        task: "<i>Find a way to popup an alert when this page is loaded</i>",
-        hint: "You need some way to do what you did in challenge 5 automatically",
     },
 ];
 

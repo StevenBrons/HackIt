@@ -1,7 +1,7 @@
 var challenges = require('../challenges');
 
 exports.GET = (req, res) => {
-  render(req,res);
+  render(req,res,"");
 };
 
 exports.POST = function(req, res) {
@@ -12,10 +12,10 @@ exports.POST = function(req, res) {
       challenges[req.params.index].comments.shift();
     }
   }
-  render(req,res);
+  render(req,res,"");
 };
 
-function render(req,res) {
+function render(req,res.error) {
   var index = req.params.index;
   if (index == null) {
     index = 0;
@@ -25,5 +25,6 @@ function render(req,res) {
     "comments": challenges[index].comments,
     "index": index,
     "key":challenges[index].key,
+    "error":"sdfs",
   });
 }
