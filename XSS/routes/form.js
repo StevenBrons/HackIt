@@ -5,17 +5,33 @@ exports.GET = (req, res) => {
 };
 
 exports.POST = function(req, res) {
-  var t = req.body.text;
+  let t = req.body.text;
+  var index = req.params.index;
+  let error = "";
   if (t != null) {
-    challenges[req.params.index].comments.push(t);
-    if (challenges[req.params.index].comments.length > 100) {
-      challenges[req.params.index].comments.shift();
+    challenges[index].comments.push(t);
+    if (challenges[index].comments.length > 100) {
+      challenges[index].comments.shift();
     }
   }
+
+  if (index = 4) {
+    if (t.includes("<script>") || t.includes("</script>")) {
+      error = "&ltscript&gt tags are not alowed";
+    }
+  }
+  if (index = 4) {
+    if (t.includes("<") || t.includes(">")) {
+      error = "The &lt and &gt characters are not allowed";
+    }
+  }
+
+ 
+
   render(req,res,"");
 };
 
-function render(req,res.error) {
+function render(req,res,error) {
   var index = req.params.index;
   if (index == null) {
     index = 0;
