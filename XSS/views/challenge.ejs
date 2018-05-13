@@ -26,23 +26,25 @@
         </a>
         <% } %>
     </div>
-
     <div class="content">
       <div class="exercise">
         <div id="hint" style="display: none;">
-          <%= challenges[index].hint %>
+          <%- challenges[index].hint %>
         </div>
         <h1>
           <%= challenges[index].title %>
           <div class="hint" onclick="hint()">
             Hint ?
           </div>
+          <form method="GET" action="/challenge/<%= index %>/reset">
+            <input type="submit" class="reset" onclick="reset()" value="Reset"></input>
+          </form>
         </h1>
         <div class="text">
-          <%= challenges[index].text %>
+          <%- challenges[index].text %>
         </div>
         <div class="task">
-          <%= challenges[index].task %>
+          <%- challenges[index].task %>
         </div>
       </div>
 
