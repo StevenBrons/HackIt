@@ -7,8 +7,8 @@ const Sandbox = require('../lib/sandbox');
 router.get('/', function (req, res, next) {
   res.render('index', {
     challenges: [
-      { id: 'sql', title: 'SQL - "Little Bobby Tables"'},
-      { id: 'xss', title: 'XSS - "NaN Retweets"'},
+      { id: 'sql', title: 'SQL-injections', description: 'Hacking into an unsecure database'},
+      { id: 'xss', title: 'Cross-site scripting', description: 'Injecting malicious code into a website'},
     ],
   });
 });
