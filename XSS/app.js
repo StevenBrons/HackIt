@@ -29,8 +29,9 @@ app.get('/', (req,res) => {
   res.redirect("/challenge/0");
 });
 
-app.get('/challenge/:index/:key', challenge.complete);
-app.get('/challenge/:index', challenge.GET);
+app.post('/challenge/:index/:key', challenge.complete);
+app.get('/challenge/:index', challenge.get);
+app.get('/challenge/:index/reset', challenge.reset);
 app.get('/form/:index', form.GET);
 app.post('/form/:index', form.POST);
 
