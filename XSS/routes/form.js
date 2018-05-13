@@ -8,17 +8,22 @@ exports.POST = function(req, res) {
   var t = req.body.text;
   if (t != null) {
     challenges[req.params.index].comments.push(t);
+    if (challenges[req.params.index].comments.length > 100) {
+      challenges[req.params.index].comments.shift();
+    }
   }
   render(req,res);
 };
 
 function render(req,res) {
-  var script = "";
-
-  res.render('form', {
-    "comments": challenges[req.params.index].comments,
-    "index": req.params.index,
-    "script": script,
-    "key":challenges[req.params.index].key,
+  var index = req.params.index;
+  if (index == null) {
+    index = 0;
+  }
+  
+  res.render('form' + index, {
+    "comments": challenges[index].comments,
+    "index": index,
+    "key":challenges[index].key,
   });
 }

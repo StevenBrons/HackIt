@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src='/javascripts/game.js'></script>
+    <title>Unsafe Form 1</title>
+</head>
+
+<body style="text-align: center;">
+    <h2>Post your comment!</h2>
+    <form id="form" action="./<%= index %>" method="POST">
+        <textarea id="input" name="text" rows="4" cols="50" placeholder="Type your comment here!"></textarea>
+        <br>
+        <input type="button" onclick="replaceCharacters()" value="Submit!"></input>
+    </form>
+    <div class="commentbox">
+        <% for (var c of comments) { %>
+            <input class="comment" value="<%- c %>"></input>
+        <% } %>
+    </div>
+    <script>
+        function replaceCharacters() {
+            var input = document.getElementById("input").value;
+            input = input.replace(/&/g, "&amp;")
+            input = input.replace(/</g, "&lt;")
+            input = input.replace(/>/g, "&gt;")
+            input = input.replace(/"/g, "&quot;")
+            input = input.replace(/'/g, "&#039;");
+            document.getElementById("input").value = input;
+            setTimeout(() => {
+                document.getElementById("form").submit();
+            },500);
+        }
+    </script>
+
+</body>
+
+</html>
