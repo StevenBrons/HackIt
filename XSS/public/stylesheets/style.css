@@ -8,7 +8,6 @@
   --secondary-text: #757575;
   --divider: #BDBDBD;
   --defauld-font: Arial, Helvetica, sans-serif;
-  
 }
 
 body {
@@ -47,12 +46,11 @@ body {
   display: block;
   text-decoration: none;
   color: var(--text);
+  cursor: pointer;
 }
 
 .menu-item:hover {
   background-color: var(--primary-dark);
-  transition-duration: 50ms;
-  cursor: pointer;
 }
 
 .content {
@@ -101,11 +99,11 @@ h2 {
 
 textarea {
   color: var(--secondary-text);
-  border: 2px solid var(--divider);
   font-size: 1.4em;
   color: var(--secondary-text);
   border: 2px solid var(--divider);
   font-size: 1.4em;
+  width: 50%;
 }
 
 input {
@@ -121,8 +119,6 @@ iframe {
 .checkmark {
   fill: var(--text);
   width: 25px;
-  margin-bottom: -10px;
-  display: inline;
   float: right;
 }
 
@@ -134,7 +130,6 @@ iframe {
   margin-right: 20px;
   top: 22px;
   right: 20px;
-  vertical-align: middle;
   display: block;
   text-decoration: none;
   cursor: pointer;
@@ -153,9 +148,52 @@ iframe {
   color: var(--primary-dark);
 }
 
+.reset {
+  color: var(--primary-text);
+  font-size: 60%;
+  font-weight: bold;
+  position: absolute;
+  margin-right: 20px;
+  top: 22px;
+  right: 150px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0px solid black;
+  background: inherit;
+}
+
+.reset:hover {
+  color: var(--secondary-text);
+}
+
 .comment {
   display: block;
   font-size: 1.4em;
   color: var(--secondary-text);
   font-size: 1.4em;
+  margin: auto;
+  border: 0px solid black;
+}
+
+button {
+  display: block;
+  font-size: 1.4em;
+  color: var(--secondary-text);
+  font-size: 1.4em;
+  margin: auto;
+  border: 2px solid var(--divider);
+  cursor: pointer;
+  padding: 0px;
+}
+
+.win {
+  margin-top:30vh;
+  padding:5vh;
+  font-size: 200%;
+  color: var(--primary-dark);
+  font-weight: bold;
+  text-align:center;
+  font-family: var(--defauld-font);
+  background-color: var(--text);
 }
