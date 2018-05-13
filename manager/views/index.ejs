@@ -6,14 +6,14 @@
   </head>
   <body>
     <h1>HackIt.tk</h1>
-    <form method="post" action="/start">
-      <% for (challenge of challenges) { %>
-        <input id="challenge-<%= challenge.id %>" type="radio" name="challenge" value="<%= challenge.id %>">
-        <label for="challenge-<%= challenge.id %>"><%= challenge.title %></label>
-        <br>
-      <% } %>
-      <br>
-      <input type="submit" value="Start Challenge!">
-    </form>
+      <div class="main">
+        <% for (challenge of challenges) { %>
+          <form method="post" action="/start" class="challenge" id="desc-<%= challenge.id %>">
+            <button type="submit" class="challenge-title" id="title-<%= challenge.id %>"><%= challenge.title %></button>
+            <button type="submit" class="challenge-description"><%= challenge.description %></button>
+            <input type="hidden" name="challenge" value="<%= challenge.id %>"></input>
+          </form>
+        <% } %>
+      </div>
   </body>
 </html>

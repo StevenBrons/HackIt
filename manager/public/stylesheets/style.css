@@ -1,8 +1,79 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
 }
 
-a {
-  color: #00B7FF;
+.main {
+  padding: 1%;
+}
+
+#desc-sql {
+  background-color:#2196F3;
+}
+
+#title-sql {
+  background-color:#1976D2;
+}
+
+#desc-xss {
+  background-color:#673AB7;
+}
+
+#title-xss {
+  background-color:#512DA8;
+}
+
+h1 {
+  text-align: center;
+  font-size: 300%;
+  background-color: #2196F3;
+  color: white;
+  margin: 0px;
+  padding: .5%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+input {
+  margin: 0px;
+  padding: 0px;
+}
+
+button {
+  border: 0px solid black;
+  margin: 0px;
+  width: 100%;
+  background-color: inherit;
+}
+
+.challenge {
+  border: 0px solid black;
+  display: inline-block;
+  height: 180px;
+  width: 500px;
+  margin: 1%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  transition-duration: 200ms;
+  cursor: pointer;
+  position: relative;
+}
+
+.challenge:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.challenge-title {
+  padding: 2%;
+  background-color:#1976d2;
+  color: white;
+  font-size: 180%;
+}
+
+.challenge-description {
+  padding: 2%;
+  font-size: 130%;
+  color: #EBEBEB;
 }
