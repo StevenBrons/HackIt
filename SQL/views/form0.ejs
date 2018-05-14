@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    Unsafe website
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="main">
+    <div style="overflow-y: auto; width: 100%; height: 60%; position: absolute;">
+    <table style="-webkit-column-count: <%= columns %>;-moz-column-count: <%= columns %>column-count: <%= columns %>;">
+        <% for (var n = 0; n < columns; n++) { %>
+            <th>
+                <%= JSON.stringify(Object.keys(students[0])[n]) %>
+            </th>
+        <% }%>
+        <% for (var i = 0; i < students.length; i++) { %>
+            <tr>
+                <% for (var c = 0; c < Object.keys(students[i]).length; c++) { %>
+                    <td><%= JSON.stringify(students[i][Object.keys(students[i])[c]]) %></td>
+                <% }%>
+            </tr>
+        <% }%>
+    </table>
+	</div>
+  </div>
+</body>
+
+</html>
