@@ -8,27 +8,26 @@ exports.POST = function(req, res) {
   let t = req.body.text;
   var index = req.params.index;
   let error = "";
-  if (t != null) {
+
+  if (index == 4) {
+    if (t.includes("<script>") || t.includes("</script>")) {
+      error = "<script> tags are not alowed";
+    }
+  }
+  if (index == 5) {
+    if (t.includes("<") || t.includes(">")) {
+      error = "The < and > characters are not allowed";
+    }
+  }
+
+  if (t != null && error == "") {
     challenges[index].comments.push(t);
     if (challenges[index].comments.length > 100) {
       challenges[index].comments.shift();
     }
   }
 
-  if (index = 4) {
-    if (t.includes("<script>") || t.includes("</script>")) {
-      error = "&ltscript&gt tags are not alowed";
-    }
-  }
-  if (index = 4) {
-    if (t.includes("<") || t.includes(">")) {
-      error = "The &lt and &gt characters are not allowed";
-    }
-  }
-
- 
-
-  render(req,res,"");
+  render(req,res,error);
 };
 
 function render(req,res,error) {
@@ -41,6 +40,6 @@ function render(req,res,error) {
     "comments": challenges[index].comments,
     "index": index,
     "key":challenges[index].key,
-    "error":"sdfs",
+    "error":error,
   });
 }

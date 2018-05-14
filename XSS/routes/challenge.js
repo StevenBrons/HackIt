@@ -22,7 +22,6 @@ exports.complete = (req, res) => {
 
 exports.reset = (req, res) => {
 	challenges[req.params.index].comments = [];
-	console.log("fdsfsdf");
 	res.redirect("/challenge/" + req.params.index);
 };
 
