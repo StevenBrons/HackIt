@@ -29,7 +29,9 @@ class Sandbox extends EventEmitter {
   }
 
   _generateRandomPort() {
-    return (Math.floor(Math.random() * (19999 - 11111)) + 11111).toString();
+    const from = 20000;
+    const to = 30000;
+    return (Math.floor(Math.random() * (to - from)) + 20000).toString();
   }
 
   async _createNetwork() {
